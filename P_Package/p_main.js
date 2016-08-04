@@ -9,3 +9,4 @@ base.sayHi();
 
 var lucy=new Person("lucy",18,"女");
 lucy.sayHello();
+console.log(__dirname)
