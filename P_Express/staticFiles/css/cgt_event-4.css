@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*主体*/
+*{margin:0;padding:0;font-size:inherit;}
+html{_background:url(about:blank);}
+ul,ol{list-style:none;}
+input,textarea,select{font-family:'microsoft yahei';font-size:16px;outline:none;}
+.clearfix:after{content:" ";display:block;height:0;clear:both;visibility:hidden;}
+.clr{height:0;font-size:0;clear:both;_overflow:hidden}
+
+.eventWrap{font-family:"Microsoft YaHei";font-size:16px;color:#25364a;line-height:1.5em;}
+.eventWrap em,.eventWrap i{font-style:normal;}
+.eventWrap ul li img{display:block;border:0;vertical-align:bottom;}
+
+.topline{font-size:12px;}
+
+/*banner部分*/
+.topBanner{width:100%;background:url(../images/zt1_banner.jpg) center top no-repeat;background-size:108% 108%;}
+.topBanner2{width:1100px;height:420px;overflow:hidden;margin:0 auto;position:relative;}
+.topBanner2 img{display:block;margin:105px auto 0;visibility:hidden;}
+.topBanner2 i{width:120px;height:79px;overflow:hidden;text-indent:-1999px;position:absolute;left:0;top:0;background:url(../images/zt1_1.png) no-repeat;}
+
+/*区块*/
+.eventMain{width:1100px;margin:0 auto;}
+.eventMain.case{overflow:hidden;background:url(../images/zhuanti04_05.jpg) center top no-repeat;}
+.eventMain h2{height:60px;margin:50px 0 20px;font-size:32px;color:#333;text-align:center;}
+.eventMain h2 span{font-weight:normal;font-size:16px;color:#333;}
+.eventMain h2 font{color:#ff7a81;}
+.eventMain h2.last{color:#fff;}
+.eventMain h2.last span{color:#fff;}
+
+.definition{height:183px;padding:122px 10px 0 448px;margin-bottom:30px;color:#fff;background:url(../images/zhuanti04_03.jpg) no-repeat;}
+.youshi{width:100%;overflow:hidden;background:#f4f4f4;}
+
+
+.footerStep_box{height:320px;overflow:hidden;background:url(../images/zhuanti04_11.jpg) center top no-repeat;}
+.footerStep{width:100%;overflow:hidden;}
+.footerStep li{float:left;}
+.footerStep li strong{line-height:48px;margin-left:62px;font-weight:normal;font-size:26px;color:#ff7a81;}
+.footerStep li p{margin-top:15px;line-height:30px;font-size:18px;color:#fff;}
+
+.footerStep li.s1{width:412px;}
+.footerStep li.s2{width:434px;}
+
+
+/*实时加载动画*/
+.animation{visibility:visible;animation:fadeInUp 1.5s .3s ease both;}
+@keyframes fadeInUp{0%{opacity:0;transform:translateY(40px)}
+100%{opacity:1;transform:translateY(0)}
+}
+
+.topBanner2 img.animation{visibility:visible;animation:fadeInUp2 1.5s 1s ease both;}
+@keyframes fadeInUp2{0%{opacity:0;transform:translateY(150px)}
+50%{opacity:1;transform:translateY(-40px)}
+100%{opacity:1;transform:translateY(0)}
+}
+
+.topBanner.animation{animation:bgZoom 4.5s .5s ease both;}
+@keyframes bgZoom{30%{background-size:110% 110%;}
+100%{background-size:100% 100%;}
+}
+
+.step_ul li.step_1.animation,.step_ul li.step_3.animation{animation:fadeInLeft 1.3s 0s ease both;}
+@keyframes fadeInLeft{0%{opacity:0;transform:translateX(-500px)}
+50%{opacity:0.8;}
+100%{opacity:1;transform:translateX(0)}
+}
+
+.step_ul li.step_2.animation,.step_ul li.step_4.animation{animation:fadeInRight 1.5s 0s ease both;}
+@keyframes fadeInRight{0%{opacity:0;transform:translateX(500px)}
+50%{opacity:0.8;}
+100%{opacity:1;transform:translateX(0)}
+}
