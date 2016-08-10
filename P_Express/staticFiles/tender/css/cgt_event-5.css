@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*主体*/
+*{margin:0;padding:0;font-size:inherit;}
+html{_background:url(about:blank);}
+ul,ol{list-style:none;}
+input,textarea,select{font-family:'microsoft yahei';font-size:16px;outline:none;}
+.clearfix:after{content:" ";display:block;height:0;clear:both;visibility:hidden;}
+.clr{height:0;font-size:0;clear:both;_overflow:hidden}
+
+.eventWrap{font-family:"Microsoft YaHei";font-size:16px;color:#999;line-height:1.5em;}
+.eventWrap em,.eventWrap i{font-style:normal;}
+.eventWrap ul li img{display:block;border:0;vertical-align:bottom;}
+
+.topline{font-size:12px;}
+
+/*banner部分*/
+.topBanner{width:100%;background:url(../images/zt1_banner.jpg) center top no-repeat;background-size:108% 108%;}
+.topBanner2{width:1100px;height:420px;overflow:hidden;margin:0 auto;position:relative;}
+.topBanner2 img{display:block;margin:160px auto 0;visibility:hidden;}
+.topBanner2 i{width:120px;height:79px;overflow:hidden;text-indent:-1999px;position:absolute;left:0;top:0;background:url(../images/zt1_1.png) no-repeat;}
+
+/*区块*/
+.eventMain{width:1100px;margin:0 auto;overflow:hidden;}
+.eventMain h2{line-height:38px;margin:40px 0 10px;font-weight:normal;font-size:36px;color:#333;text-align:center;}
+.eventMain h2 span{font-weight:normal;font-size:16px;color:#333;}
+.eventMain h2 font{color:#ff7a81;}
+.eventMain h2.last{color:#fff;}
+.eventMain h2.last span{color:#fff;}
+.tc{margin-bottom:40px;text-align:center;}
+
+.infoTxt{height:125px;padding:35px 40px 0 40px;margin-top:32px;line-height:28px;color:#666;text-indent:62px;background:url(../images/zhuanti05_03.jpg) no-repeat;}
+
+.lhzb_box{height:360px;color:#fff;background:url(../images/zhuanti05_05.jpg) no-repeat;}
+.lhzb{padding:102px 0 0 120px;}
+.lhzb h3{font-size:42px;line-height:42px;font-weight:normal;margin-bottom:15px;}
+.lhzb a{display:block;width:160px;height:44px;margin-top:30px;text-align:center;line-height:44px;font-size:18px;color:#fff;text-decoration:none;background:#e71b1b;outline:none;}
+.lhzb a:hover{background:#f40;}
+
+
+/*成功案例*/
+.case_wrap{height:380px;background:#ebedf6;}
+.caseBox{width:1038px;height:180px;overflow:hidden;padding:0 30px;border:1px solid #ddd;background:#fff;}
+.prevBtn,.nextBtn{float:left;width:44px;height:44px;outline:none;margin-top:68px;}
+.prevBtn:hover,.nextBtn:hover{opacity:0.7;}
+.prevBtn{margin-right:10px;background:url(../images/arrow_left.png) no-repeat;}
+.nextBtn{margin-left:10px;background:url(../images/arrow_right.png) no-repeat;}
+
+.caseBox_2{float:left;width:930px;height:115px;overflow:hidden;margin-top:35px;}
+.caseBox_3 ul{width:999999px;}
+.caseBox_3 ul li{float:left;width:930px;overflow:hidden;}
+.con_left{float:left;width:293px;height:115px;padding-right:20px;border-right:2px solid #ebedf6;}
+.con_left img{float:right;width:96px;height:96px;border-radius:50%;margin-top:10px;}
+.con_left .txt{float:right;padding:15px 10px 0 0;text-align:right;}
+.con_left strong{color:#333;}
+.con_left strong i{display:inline-block;width:26px;height:26px;line-height:26px;margin:0 3px;text-align:center;border-radius:50%;color:#fff;background:#1d5790;}
+.con_left h3,.con_right h3{margin:5px 0;font-size:18px;font-weight:normal;color:#1d5790;}
+.con_left h3 a,.con_right h3 a{color:#1d5790;text-decoration:none;}
+.con_left h3 a:hover,.con_right h3 a:hover{color:#f40;text-decoration:underline;}
+
+.con_right{float:left;width:515px;padding:0 20px 0 80px;background:url(../images/yh.png) 15px 0 no-repeat;}
+
+
+/*实时加载动画*/
+.animation{visibility:visible;animation:fadeInUp 1.5s .3s ease both;}
+@keyframes fadeInUp{0%{opacity:0;transform:translateY(40px)}
+100%{opacity:1;transform:translateY(0)}
+}
+
+.topBanner2 img.animation{visibility:visible;animation:fadeInUp2 1.5s 1s ease both;}
+@keyframes fadeInUp2{0%{opacity:0;transform:translateY(150px)}
+50%{opacity:1;transform:translateY(-40px)}
+100%{opacity:1;transform:translateY(0)}
+}
+
+.topBanner.animation{animation:bgZoom 4.5s .5s ease both;}
+@keyframes bgZoom{30%{background-size:110% 110%;}
+100%{background-size:100% 100%;}
+}
+
+.step_ul li.step_1.animation,.step_ul li.step_3.animation{animation:fadeInLeft 1.3s 0s ease both;}
+@keyframes fadeInLeft{0%{opacity:0;transform:translateX(-500px)}
+50%{opacity:0.8;}
+100%{opacity:1;transform:translateX(0)}
+}
+
+.step_ul li.step_2.animation,.step_ul li.step_4.animation{animation:fadeInRight 1.5s 0s ease both;}
+@keyframes fadeInRight{0%{opacity:0;transform:translateX(500px)}
+50%{opacity:0.8;}
+100%{opacity:1;transform:translateX(0)}
+}
