@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <title>Album</title>
+</head>
+<body>
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="/">相册</a></li>
+        <li class="active"><%= albumName %></li>
+    </ol>
+    <div class="row">
+        <% for(var i = 0;i < picName.length;i++){ %>
+        <div class="col-xs-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="/<%= albumName%>/<%= picName[i]%>" alt="pic">
+            </a>
+        </div>
+        <% } %>
+    </div>
+</div>
+</body>
+</html>

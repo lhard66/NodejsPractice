@@ -28,3 +28,25 @@ exports.getAllAlbums=(callback)=>{
         })(0);
     });
 }
+exports.getPicNames=(albumName,callback)=>{
+    //这里的./uploads的.指的是app.js所在的目录
+    fs.readdir('./uploads/'+albumName,(err,files)=>{
+        callback(files);
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

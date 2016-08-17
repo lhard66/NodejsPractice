@@ -19,9 +19,12 @@ exports.showIndex=(req,res)=>{
        }) ;
     });
 }
-// exports.favicon=(res,req)=>{
-//     fs.readFile('/favicon.ico',(err,data)=>{
-//         res.writeHead(200,{"Content-type":"image/ico"});
-//         res.send(data);
-//     });
-// }
+exports.showAlbum=(req,res)=>{
+    var albumName=req.params['name'];
+    file.getPicNames(albumName,(files)=>{
+            res.render('album',{
+                'picName':files,
+                'albumName':albumName
+            });
+    });
+}
