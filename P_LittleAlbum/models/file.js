@@ -2,6 +2,8 @@
  * Created by HeroLiu on 08/16/2016.
  */
 var fs=require('fs');
+var formidable=require('formidable');
+var util=require('util');
 
 exports.getAllAlbums=(callback)=>{
     //return ['小猫','小狗','小猪','小羊','小马','小牛','小蛇'];
@@ -32,6 +34,14 @@ exports.getPicNames=(albumName,callback)=>{
     //这里的./uploads的.指的是app.js所在的目录
     fs.readdir('./uploads/'+albumName,(err,files)=>{
         callback(files);
+    });
+}
+exports.uploadProcess=(req,res,callback)=>{
+    var form=new formidable.IncomingForm();
+    form.uploadDir ='./temp';
+
+    form.parse(req,(err,fields,files)=>{
+        callback(err,fields,files);
     });
 }
 

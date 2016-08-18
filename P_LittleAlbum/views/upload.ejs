@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>上传</title>
+</head>
+<body>
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="/">相册</a></li>
+        <li class="active">上传</li>
+    </ol>
+    <div>
+        <form action="/uploadRes" method="post" enctype="multipart/form-data" >
+            <div class="form-group">
+                <label for="exampleInputPassword1">文件夹</label>
+                <select class="form-control" name="albumName" style="width: 20%">
+                    <% for(var i = 0;i < albums.length;i++){ %>
+                    <option value="<%= albums[i]%>"><%= albums[i] %></option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile">上传文件</label>
+                <input type="file" name="uploadFile">
+                <p class="help-block">请确保上传图片文件小于2M</p>
+            </div>
+            <button type="submit" class="btn btn-default">开始上传</button>
+        </form>
+    </div>
+</div>
+<script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+</body>
+</html>

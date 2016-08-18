@@ -15,13 +15,17 @@ app.set('view engine','ejs');
 //静态页面
 app.use(express.static('./public'));
 app.use(express.static('./uploads'));
-//favicon图标
-//app.use(favicon(__dirname + '/public/images/favicon.ico'));
+
 //首页
 app.get('/',router.showIndex);
 //处理相册
 app.get('/album/:name',router.showAlbum);
-
+//上传页面显示
+app.get('/upload',router.uploadShow);
+//上传图片
+app.post('/uploadres',router.uploadRes);
+//favicon
+app.get('/favicon.ico',router.favicon);
 //404
 app.use((req,res)=>{
     res.render('err');
