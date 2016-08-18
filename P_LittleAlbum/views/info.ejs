@@ -15,6 +15,21 @@
         <li class="active">信息</li>
     </ol>
     <h3><%= msg %></h3>
+    <h3>即将在<span id="sec">3</span>秒后跳转至首页！</h3>
 </div>
+<script>
+    function redirectPage() {
+        var secObj = document.getElementById('sec');
+        var secNum = secObj.innerText;
+        if (secNum == 0) {
+            window.location.href = '/';
+        } else {
+            secObj.innerText = --secNum;
+        }
+    }
+    //定时器
+    setInterval(redirectPage, 1000);
+
+</script>
 </body>
 </html>
