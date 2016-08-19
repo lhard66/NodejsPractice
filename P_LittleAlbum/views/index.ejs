@@ -34,9 +34,9 @@
                 <li class="active"><a href="#">浏览 <span class="sr-only">(current)</span></a></li>
                 <li><a href="/upload">上传</a></li>
             </ul>
-            <form class="navbar-form navbar-left" role="search">
+            <form class="navbar-form navbar-left" role="search" action="/delfolder" method="get">
                 <div class="form-group">
-                    <select name="delName" class="form-control" style="width:140px;">
+                    <select name="delname" class="form-control" style="width:140px;">
                         <% for(var i = 0;i < albums.length;i++){ %>
                         <option value="<%= albums[i]%>"><%= albums[i] %></option>
                         <% } %>

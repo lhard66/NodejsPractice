@@ -24,6 +24,8 @@ app.get('/album/:name',router.showAlbum);
 app.get('/upload',router.uploadShow);
 //上传图片
 app.post('/uploadres',router.uploadRes);
+//删除文件夹
+app.get('/delfolder',router.delFolder);
 //favicon
 app.get('/favicon.ico',router.favicon);
 //404
