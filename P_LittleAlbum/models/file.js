@@ -44,6 +44,30 @@ exports.uploadProcess=(req,res,callback)=>{
         callback(err,fields,files);
     });
 }
+exports.delFolderAndImages=(req,callback)=>{
+    var del= req.query;
+    var folderPath='./uploads/'+del.delname;
+    //得到文件夹中的文件
+    var files= fs.readdirSync(folderPath);
+    if(files.length<1){
+        res.render('info',{
+            'msg':'此文件夹不存在'
+        });
+    }else {
+        //循环删除文件
+        files.forEach(ele=>{
+            fs.unlinkSync(folderPath+'/'+ele);
+        });
+    }
+    var nowfiles=fs.readdirSync(folderPath);
+    //表示文件夹已清空
+    if(nowfiles.length<1){
+        fs.rmdirSync(folderPath);
+        callback(true);
+        return;
+    }
+    callback(false);
+}
 
 
 

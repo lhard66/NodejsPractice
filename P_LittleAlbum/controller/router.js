@@ -81,26 +81,13 @@ exports.favicon = (req, res)=> {
 }
 //删除文件夹
 exports.delFolder=(req,res)=>{
-    var del= req.query;
-    var folderPath='./uploads/'+del.delname;
-    //得到文件夹中的文件
-    var files= fs.readdirSync(folderPath);
-    if(files.length<1){
-        res.render('info',{
-            'msg':'此文件夹不存在'
-        });
-    }
-    //循环删除文件
-    files.forEach(ele=>{
-       fs.unlinkSync(folderPath+'/'+ele);
-    });
-    var nowfiles=fs.readdirSync(folderPath);
-    //表示文件夹已清空
-    if(nowfiles.length<1){
-        fs.rmdirSync(folderPath);
-    }
-    res.render('info',{
-        'msg':'已成功删除文件夹'
+    file.delFolderAndImages(req,stat=>{
+       if(stat){
+           res.render('info',{
+               'msg':'已成功删除文件夹'
+           });
+           return;
+       }
     });
 }
 
