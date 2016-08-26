@@ -1,7 +1,8 @@
 var mongoClient = require('mongodb').MongoClient;
+var setting = require('./setting.js');
 
 function _connectDB(callback) {
-    var dburl = 'mongodb://localhost:27017/test';
+    var dburl = setting.dburl;
     mongoClient.connect(dburl, (err, db)=> {
         callback(err, db);
     });
