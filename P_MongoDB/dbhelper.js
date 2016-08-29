@@ -68,7 +68,7 @@ exports.updateMany = function (collectionName, oldjson, newjson, optionjson, cal
     });
 }
 //查找,{}为查找全部
-exports.find = function (collectionName, queryjson, callback) {
+exports.find = function (collectionName, queryjson, argsjson, callback) {
     _connectDB((err, db)=> {
         if (err) {
             db.close();
@@ -76,7 +76,13 @@ exports.find = function (collectionName, queryjson, callback) {
             return;
         }
         var collection = db.collection(collectionName);
-        collection.find(queryjson).toArray((err, docs)=> {
+        //解析argsjson
+        var _skip = argsjson.skip || 0;
+        var _limit = argsjson.limit || 0;
+        var _sort = argsjson.sort || {};
+        console.log(_sort);
+        console.log(_skip + '---' + _limit);
+        collection.find(queryjson).skip(_skip).limit(_limit).sort(_sort).toArray((err, docs)=> {
             callback(err, docs);
             db.close();
         });

@@ -52,7 +52,7 @@ app.get('/update', (req, res)=> {
 });
 
 app.get('/findAll', (req, res)=> {
-    dbhelper.find('teacher', {}, (err, docs)=> {
+    dbhelper.find('teacher', {}, {skip: 1, limit: 3, sort: {"name": 1}}, (err, docs)=> {
         if (err) {
             console.log('findall err');
             return;
