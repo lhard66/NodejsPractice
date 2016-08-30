@@ -22,4 +22,9 @@ app.get('/', (req, res)=> {
     res.send(footpoint);
 });
 
+app.get('/clear', (req, res)=> {
+    res.clearCookie('name');
+    res.send('clear cookie');
+});
+
 app.listen(3000);
