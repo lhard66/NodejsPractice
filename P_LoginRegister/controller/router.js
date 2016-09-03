@@ -44,8 +44,10 @@ exports.doLogin = (req, res)=> {
                 res.send('登陆失败！');
                 //console.log(docs);
                 return;
-            }else {
+            } else {
                 //记录session
+                console.log(fields.name);
+                req.session.name = fields.name;
                 res.send('登陆成功！');
             }
         });
@@ -58,8 +60,18 @@ exports.login = (req, res)=> {
     });
 }
 
-exports.content=(req,res)=>{
-    user.content((name)=>{
-        res.render(name);
+exports.content = (req, res)=> {
+    //判断用户是否登陆成功
+    var ustat = '失败';
+    var uname = '无';
+    if (req.session.name) {
+        uname = req.session.name;
+        ustat = '成功';
+    }
+    user.content((name)=> {
+        res.render(name, {
+            name: uname,
+            stat: ustat
+        });
     });
 }

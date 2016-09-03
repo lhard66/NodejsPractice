@@ -13,6 +13,7 @@ exports.writeRegister = (userjson, callback)=> {
             callback(-1);
             return;
         }
+
         callback(result);
     });
 }
@@ -24,7 +25,7 @@ exports.showLogin = (callback)=> {
 exports.existLogin = (userjson, callback)=> {
     //查询数据，返回登陆是否成功
     dbhelper.find('user', userjson, {}, (err, docs)=> {
-        if(err){
+        if (err) {
             console.log('dologin err');
             callback(-1);
             return;
@@ -33,6 +34,6 @@ exports.existLogin = (userjson, callback)=> {
     });
 }
 
-exports.content=(callback)=>{
+exports.content = (callback)=> {
     callback('content');
 }
