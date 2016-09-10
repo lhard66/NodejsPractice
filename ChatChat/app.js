@@ -14,6 +14,10 @@ app.get('/login', userController.showLogin);
 
 app.post('/dologin', userController.doLogin);
 
+app.get('/register',userController.showRegister);
+
+app.post('/doregister',userController.doRegister);
+
 app.use((req,res)=>{
    res.send('404');
 });

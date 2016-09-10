@@ -72,6 +72,7 @@ exports.updateMany = function (collectionName, oldjson, newjson, optionjson, cal
     });
 }
 //查找,{}为查找全部
+//{name:'12322',pwd:'6666'}
 //{skip: 1, limit: 3, sort: {"name": 1}}
 exports.find = function (collectionName, queryjson, argsjson, callback) {
     _connectDB((err, db)=> {
@@ -85,8 +86,7 @@ exports.find = function (collectionName, queryjson, argsjson, callback) {
         var _skip = argsjson.skip || 0;
         var _limit = argsjson.limit || 0;
         var _sort = argsjson.sort || {};
-        console.log(_sort);
-        console.log(_skip + '---' + _limit);
+
         collection.find(queryjson).skip(_skip).limit(_limit).sort(_sort).toArray((err, docs)=> {
             callback(err, docs);
             db.close();
