@@ -7,7 +7,7 @@ exports.showRegister = (callback)=> {
 
 exports.writeRegister = (userjson, callback)=> {
     //写入数据操作
-    dbhelper.insertDocuments('user', [userjson], (err, result)=> {
+    dbhelper.insertDocuments('user', userjson, (err, result)=> {
         if (err) {
             console.log('insertDocument err');
             callback(-1);
