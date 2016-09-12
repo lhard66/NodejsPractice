@@ -19,15 +19,15 @@ exports.showLogin = ((req, res)=> {
 exports.doLogin = ((req, res)=> {
     var form = formidable.IncomingForm();
     form.parse(req, (err, fields)=> {
+        //密码转为MD5
+        fields.pwd = tool.MD5(fields.pwd);
         dbhelper.find('users', fields, '', (err, docs)=> {
             if (docs.length) {
                 //记录session
                 req.session.name = docs[0].name;
-                res.render('index', {
-                    name: req.session.name
-                });
+                res.redirect('/index');
             } else {
-                res.send('fail');
+                res.send('404');
             }
         });
     });
@@ -48,7 +48,7 @@ exports.doRegister = ((req, res)=> {
                 res.render('404');
                 return;
             }
-            res.render('login');
+            res.redirect('login');
         });
     });
 });
