@@ -1,2 +1,4 @@
 .idea/
 P_LittleAlbum/uploads
+/P_LittleAlbum/temp
+node_modules
